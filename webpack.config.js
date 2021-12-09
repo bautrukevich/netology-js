@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const config = {
-  entry: path.join(__dirname, './src/pages/index.js'),
+  entry: path.join(__dirname, './src/pages/index.ts'),
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
@@ -17,10 +17,13 @@ const config = {
     compress: true,
     port: 8080
   },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   module: {
     rules: [{
-      test: /\.js$/,
-      use: 'babel-loader',
+      test: /\.ts$/,
+      use: 'ts-loader',
       exclude: '/node_modules/'
     },
       {
