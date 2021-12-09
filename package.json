@@ -1,0 +1,18 @@
+{
+  "name": "netology",
+  "description": "Test task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bautrukevich/netology-js.git"
+  },
+  "author": "Siarhei Bautrukevich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bautrukevich/netology-js/issues"
+  },
+  "homepage": "https://github.com/bautrukevich/netology-js#readme"
+}
