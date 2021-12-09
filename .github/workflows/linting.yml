@@ -10,7 +10,7 @@ jobs:
   js:
     runs-on: ubuntu-latest
     steps:
-      - name: Загрузка платформы
+      - name: Загрузка приложения
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
@@ -22,7 +22,7 @@ jobs:
   css:
     runs-on: ubuntu-latest
     steps:
-      - name: Загрузка платформы
+      - name: Загрузка приложения
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
