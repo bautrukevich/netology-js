@@ -1,6 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: path.join(__dirname, './src/pages/index.ts'),
@@ -15,7 +15,7 @@ const config = {
     },
     open: true,
     compress: true,
-    port: 8080
+    port: 8080,
   },
   resolve: {
     extensions: ['.ts', '.js'],
@@ -24,28 +24,28 @@ const config = {
     rules: [{
       test: /\.ts$/,
       use: 'ts-loader',
-      exclude: '/node_modules/'
+      exclude: '/node_modules/',
     },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1
-          }
+    {
+      test: /\.css$/,
+      use: [MiniCssExtractPlugin.loader, {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
         },
-          'postcss-loader'
-        ]
       },
-    ]
+      'postcss-loader',
+      ],
+    },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin(),
-  ]
-}
+  ],
+};
 
 module.exports = (env, argv) => {
   if (argv.mode === 'development') {
