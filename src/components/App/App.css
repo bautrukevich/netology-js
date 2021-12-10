@@ -1,0 +1,9 @@
+.app {
+  background-color: #000;
+  padding: 8px;
+}
+
+.app__container {
+  padding: 24px;
+  background-color: #fff;
+}
