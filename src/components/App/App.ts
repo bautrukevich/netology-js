@@ -3,7 +3,7 @@ import { Title } from '../Title/Title';
 import { List } from '../List/List';
 import { Loading } from '../Loading/Loading';
 import { html } from '../../utils/html';
-import { Item } from '../../api/getData';
+import type { Item } from '../../api/getData';
 
 interface Props {
   isLoading: boolean
@@ -16,7 +16,7 @@ export function App({ isLoading, data }: Props): Element {
   }
 
   const title = Title({
-    text: 'Изучайте <a class="link" href="#">актуальные темы</a>',
+    text: 'Изучайте <a class="title__link" href="#">актуальные темы</a>',
   });
   const list = List({ data });
 

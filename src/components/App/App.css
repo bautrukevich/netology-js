@@ -1,9 +1,11 @@
 .app {
-  background-color: #000;
+  background-color: var(--color-black);
   padding: 8px;
+  min-height: 100%;
 }
 
 .app__container {
   padding: 24px;
   background-color: #fff;
+  min-height: 100%;
 }
