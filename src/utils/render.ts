@@ -4,5 +4,5 @@
  * @param parentElement
  */
 export function render(element: Element, parentElement: Element): void {
-  parentElement.replaceWith(element);
+  parentElement.replaceChildren(element);
 }
