@@ -4,6 +4,7 @@
   "rules": {
     "block-no-empty": null,
     "custom-property-empty-line-before": null,
-    "declaration-empty-line-before": null
+    "declaration-empty-line-before": null,
+    "selector-class-pattern": null
   }
 }
