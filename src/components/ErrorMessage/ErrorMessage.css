@@ -1,0 +1,22 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans);
+  color: #ef4444;
+}
+
+.error__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.error__message {
+  margin: 0;
+  padding: 0;
+}
