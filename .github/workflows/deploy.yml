@@ -1,6 +1,7 @@
 name: Application Deploy
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -30,6 +31,8 @@ jobs:
       - name: Деплой сайта
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git config --global user.email "s.boltrukevich@gmail.com"
+          git config --global user.name "Siarhei Bautrukevich"
           npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
