@@ -1,4 +1,5 @@
 import { getNoun } from '../utils/getNoun';
+import { delay } from '../utils/delay';
 
 interface RawData {
   data: Datum[];
@@ -51,22 +52,25 @@ enum Level {
 export interface Item {
   title: string,
   itemsCount: string,
+  link: string,
 }
 
 /**
  * Get data from API.
  */
 export async function getData(): Promise<Item[]> {
+  await delay(1000); // add synthetic delay to demonstrate spinner
   const response = await fetch('https://raw.githubusercontent.com/netology-code/ajs-task/master/netology.json');
-
   const { data }: RawData = await response.json();
 
   return data.map(({ groups, direction }) => {
     const count = groups.reduce((prevCount, group) => prevCount + group.items.length, 0);
-    const itemsCount = getNoun(count, 'курс', 'курса', 'курсов');
+    const countNoun = getNoun(count, 'курс', 'курса', 'курсов');
+
     return {
       title: direction.title,
-      itemsCount: `${count} ${itemsCount}`,
+      itemsCount: `${count} ${countNoun}`,
+      link: direction.link,
     };
   });
 }
